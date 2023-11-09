@@ -8,6 +8,7 @@ interface IJSONURLEncode {
   hash: string;
   url: string;
   hashFunction: string;
+  json: Record<string, string>;
 }
 
 const Lsp2Coder: React.FC = () => {
@@ -19,6 +20,7 @@ const Lsp2Coder: React.FC = () => {
       url: '',
       hash: '',
       hashFunction: 'keccak256(utf8)',
+      json: {},
     });
   const [encodingError, setEncodingError] = useState<boolean>(false);
   const [decodingError, setDecodingError] = useState<boolean>(false);
@@ -146,6 +148,7 @@ const Lsp2Coder: React.FC = () => {
             url: decoded[0].value.url,
             hash: decoded[0].value.hash,
             hashFunction: 'keccak256(utf8)',
+            json: {},
           });
     } catch (error) {
       setDecodedValue('');
@@ -153,6 +156,7 @@ const Lsp2Coder: React.FC = () => {
         url: '',
         hash: '',
         hashFunction: 'keccak256(utf8)',
+        json: {},
       });
       setDecodingError(true);
     }
@@ -165,6 +169,7 @@ const Lsp2Coder: React.FC = () => {
       url: '',
       hash: '',
       hashFunction: 'keccak256(utf8)',
+      json: {},
     });
   };
 
